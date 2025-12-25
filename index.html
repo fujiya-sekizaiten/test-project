@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まさこのプロフィール</title>
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #FFD93D;
+            --accent-color-1: #6BFFB8;
+            --accent-color-2: #4D96FF;
+            --text-color: #333;
+            --bg-color: #FFF8F0;
+            --font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .main-visual {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-image: url('https://via.placeholder.com/800x450/FFD93D/333333?text=My+Favorite+Things');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin: 40px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .profile-section {
+            background: white;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .profile-section h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .profile-section h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color-1));
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .hobby-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .hobby-item h3 {
+            font-size: 1.5em;
+            color: var(--accent-color-2);
+            margin-bottom: 15px;
+        }
+
+        .hobby-item p {
+            font-size: 1em;
+            text-align: left;
+        }
+        
+        .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin-top: 60px;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        footer p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            .profile-section {
+                padding: 30px;
+            }
+            .profile-section h2 {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .main-visual {
+                border-radius: 15px;
+                margin: 30px auto;
+            }
+            .container {
+                padding: 10px;
+            }
+            .profile-section {
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .profile-section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Masako's Profile</h1>
+            <p>日々の「好き」を集めて</p>
+        </header>
+
+        <main>
+            <div class="main-visual"></div>
+
+            <section class="profile-section" id="hobbies">
+                <h2>My Favorite Things</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-item">
+                        <div class="icon">⛰️</div>
+                        <h3>パワースポット巡り</h3>
+                        <p>心と体が清められるような、神聖な場所へ行くのが大好き。自然のエネルギーを感じながら、歴史や伝統に思いを馳せる時間は、私にとってかけがえのないものです。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="icon">🔮</div>
+                        <h3>占い (タロット・数秘術)</h3>
+                        <p>カードや数字が示すメッセージから、自分自身や運命の流れを読み解くのが面白い。見えない世界の法則を探求することで、日々の選択にヒントをもらっています。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="icon">✈️</div>
+                        <h3>旅行</h3>
+                        <p>知らない土地の空気、文化、食べ物に触れるのが最高の刺激！計画を立てる時間も、旅の途中のハプニングも、全部含めて楽しんでいます。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="icon">📷</div>
+                        <h3>写真</h3>
+                        <p>「今、この瞬間」を切り取るのが好き。特に、光と影が織りなす美しい風景や、何気ない日常の一コマを撮ることに喜びを感じます。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="icon">🌳</div>
+                        <h3>自然に触れること</h3>
+                        <p>森の匂いを吸い込んだり、波の音を聞いたり。都会の喧騒から離れて自然の中にいると、心が落ち着き、本来の自分に戻れる気がします。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Masako. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
